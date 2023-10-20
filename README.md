@@ -30,8 +30,12 @@ collision_block_id = "32125"
 
 # Verbose 
 debug = True
+
+# 文心千帆配置
+qianfan_api_key = "千帆大模型 API Key"
+qianfan_secret_key = "千帆大模型 Secret Key"
 ```
-Replace `<Your OpenAI API>` with your OpenAI API key, and `<name>` with your name.
+修改 `qianfan_api_key` 和 `qianfan_secret_key`.
  
 ### Step 2. Install requirements.txt
 Install everything listed in the `requirements.txt` file (I strongly recommend first setting up a virtualenv as usual). A note on Python version: we tested our environment on Python 3.9.12. 
