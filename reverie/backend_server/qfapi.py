@@ -1,8 +1,8 @@
-from utils import wenxin_api_key, wenxin_secret_key
+from utils import qianfan_api_key, qianfan_secret_key
 import qianfan
 
-qianfan.AK(wenxin_api_key)
-qianfan.SK(wenxin_secret_key)
+qianfan.AK(qianfan_api_key)
+qianfan.SK(qianfan_secret_key)
 
 chat_client = qianfan.ChatCompletion()
 completions_client = qianfan.Completion()

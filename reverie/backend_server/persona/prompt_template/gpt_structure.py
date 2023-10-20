@@ -6,7 +6,7 @@ Description: Wrapper functions for calling OpenAI APIs.
 """
 import json
 import openai
-import wenxin
+import qfapi
 import time
 import datetime
 
@@ -42,7 +42,7 @@ def ChatGPT_single_request(prompt):
         )
         res = completion["choices"][0]["message"]["content"]
     elif provider == "wenxin":
-        res = wenxin.chat(prompt)
+        res = qfapi.chat(prompt)
     
     save_log("ChatGPT_single_request", prompt, None, res, None)
     return res
@@ -73,7 +73,7 @@ def ChatGPT_request(prompt):
             )
             return completion["choices"][0]["message"]["content"]
         elif provider == "wenxin":
-            return wenxin.chat(prompt)
+            return qfapi.chat(prompt)
         
     except Exception as e:
         print("ChatGPT ERROR", e)
@@ -161,7 +161,7 @@ def GPT_request(prompt, gpt_parameter):
             )
             return response.choices[0].text
         elif provider == "wenxin":
-            return wenxin.completions(prompt, gpt_parameter)
+            return qfapi.completions(prompt, gpt_parameter)
     except Exception as e:
         print("GPT_request ERROR", e)
         print("TOKEN LIMIT EXCEEDED")
